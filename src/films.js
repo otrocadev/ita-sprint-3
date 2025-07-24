@@ -4,7 +4,6 @@ function getAllDirectors(array) {
   array.map((film) => {
     result.push(film.director);
   });
-  console.log('EXERCICE 1 ->', result);
   return result;
 }
 
@@ -37,7 +36,14 @@ function orderAlphabetically(array) {
 }
 
 // Exercise 5: Order by year, ascending
-function orderByYear() {}
+function orderByYear(array) {
+  return [...array].sort((a, b) => {
+    if (a.year !== b.year) {
+      return a.year - b.year;
+    }
+    return a.title.localeCompare(b.title);
+  });
+}
 
 // Exercise 6: Calculate the average of the movies in a category
 function moviesAverageByCategory() {}
